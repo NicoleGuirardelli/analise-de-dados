@@ -1,2 +1,2 @@
-# an-lise-de-dados
+# analise-de-dados
 continuação do projeto "redes-sociais"
