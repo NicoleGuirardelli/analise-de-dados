@@ -17,13 +17,44 @@
     </header>
     <main class="graficos-section">
         <section id="graficos-container" class="graficos-container">
-            <!-- crie os gráficos/texto aqui -->
+            <!-- Gráfico de barras -->
+            <div id="grafico-barras" style="width: 100%; height: 400px;"></div>
+            <!-- Gráfico de pizza -->
+            <div id="grafico-pizza" style="width: 100%; height: 400px; margin-top: 20px;"></div>
         </section>
     </main>
     <footer>
-        <p></p>
+        <p>&copy; 2024 Minha Escola. Todos os direitos reservados.</p>
     </footer>
-    <script type="module" src="grafico/common.js"></script>
-    <script type="module" src="grafico/escola.js"></script>
+    <script>
+        // Gráfico de barras
+        const dataBarras = [{
+            x: ['Facebook', 'Instagram', 'Twitter'],
+            y: [500, 600, 700],
+            type: 'bar',
+            marker: { color: ['#0073e6', '#00b050', '#ff5733'] },
+        }];
+
+        const layoutBarras = {
+            title: 'Interações por Plataforma',
+            xaxis: { title: 'Plataformas' },
+            yaxis: { title: 'Número de Interações' },
+        };
+
+        Plotly.newPlot('grafico-barras', dataBarras, layoutBarras);
+
+        // Gráfico de pizza
+        const dataPizza = [{
+            labels: ['Curtidas', 'Comentários', 'Compartilhamentos'],
+            values: [300, 150, 50],
+            type: 'pie',
+        }];
+
+        const layoutPizza = {
+            title: 'Distribuição de Interações',
+        };
+
+        Plotly.newPlot('grafico-pizza', dataPizza, layoutPizza);
+    </script>
 </body>
 </html>
